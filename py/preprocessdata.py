@@ -22,18 +22,6 @@ class ImageFolderForDogs(torchvision.datasets.ImageFolder):
             target = original_tuple[1] + 156
         return original_tuple[0], target
 
-# class DatasetFromOther(torch.utils.data.Dataset):
-#     def __init__(self, indexes, dataset):
-#         self.data = []
-#         for i in indexes:
-#             self.data.append(dataset.__getitem__(i))
-#
-#     def __len__(self):
-#         return len(self.data)
-#
-#     def __getitem__(self, index):
-#         return self.data[index]
-
 
 def write_plates_result(data, p):
     submission_df = pd.DataFrame.from_dict({'id': data[0], 'label': data[1]})
